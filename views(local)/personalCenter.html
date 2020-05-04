@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>个人中心</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- 新 Bootstrap4 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <!-- bootstrap.bundle.min.js 用于弹窗、提示、下拉菜单，包含了 popper.min.js -->
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- jQuery Validate -->
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+
+    <!-- 外接CSS -->
+    <link rel="stylesheet" href="styles/personalCenter.css" type="text/css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2">
+                <h2 id="acNa">游客</h2>
+                <div id="myIm">
+                <img height="500" alt="头像" width="600" src="http://localhost:8080/1.0/users/getAvatar/visitor" id="myAv"/>
+                </div>
+
+                <nav class="navbar bg-light">
+                    <div class="navbar-nav" id="collapsibleNavbar">
+                        <ul class="navbar-nav nav nav-pills" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#updateAccountName" data-toggle="pill">修改用户名</a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="goUpdatePassword" class="nav-link" href="updatePassword.html" data-toggle="pill">修改密码</a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="goActiveAccount" class="nav-link" href="#activeAccount" data-toggle="pill">激活邮箱</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#updataMailbox" data-toggle="pill">修改邮箱</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#uploadAvatar" data-toggle="pill">上传头像</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">提问箱状态</button>
+                    <div class="dropdown-menu">
+                        <button type="button" class="dropdown-item" id="openQ">开启</button>
+                        <button type="button" class="dropdown-item" id="closeQ">关闭</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-10">
+                <div class="tab-content"  style="margin-top:30px">
+                    <div id="updateAccountName" class="container tab-pane active"><br>
+                        <form name="updateAccountName" class="form-inline" action="" method="POST" id="updateAccountName">
+                            <div class="form_text_ipt">
+                                <input name="account_name" id="account_name" type="text" placeholder="请输入新用户名">
+                            </div>
+                            <div class="form_btn">
+                                <button class="btn btn-primary" type="submit" id="updateAccountNameButton">修改</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div id="activeAccount" class="container tab-pane"><br>
+                        <form name="activeAccount" class="form-inline" action="" method="POST" id="activeAccount">
+                            <div class="form_text_ipt">
+                                <input name="actMailbox" id="actMailbox" type="email" placeholder="请输入需要激活的邮箱">
+                            </div>
+                            <div class="form_btn">
+                                <button class="btn btn-primary" type="submit" id="activeAccountButton">提交</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div id="updataMailbox" class="container tab-pane fade"><br>
+                        <form name="updataMailbox" action="" method="POST" id="updataMailbox">
+                            <div class="form_text_ipt">
+                                <input name="mailbox" id="mailbox" type="email" placeholder="请输入新邮箱">
+                            </div>
+                            <div class="form_text_ipt">
+                                <input name="pwd" id="pwd" type="password" id="pwd" placeholder="请输入密码">
+                            </div>
+                            <div class="form_btn">
+                                <button type="submit" class="btn btn-primary" id="updataMailboxButton">修改</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div id="uploadAvatar" class="container tab-pane fade"><br>
+                        <form method="post" enctype="multipart/form-data">
+                            <input type="file" name="file" id="file" accept="image/jpg, image/png, image/JPG, image/PNG">
+                            <input type="submit" value="提交" id="upload">
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 外接js -->
+    <!-- 加密相关 -->
+    <script src="http://passport.cnblogs.com/scripts/jsencrypt.min.js"></script>
+    <!-- AES加密 -->
+    <script src="JavaScript/CryptoJS-master/rollups/aes.js"></script>
+    <script src="JavaScript/CryptoJS-master/components/mode-ecb.js"></script>
+    <script src="JavaScript/CryptoJS-master/components/pad-nopadding.js"></script>
+    <script type="text/javascript" src="JavaScript/encrypt.js"></script>
+    <!-- 操作 -->
+    <script src="JavaScript/legal.js"></script>
+    <script src="JavaScript/personalCenter.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>用户登录</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- 新 Bootstrap4 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <!-- bootstrap.bundle.min.js 用于弹窗、提示、下拉菜单，包含了 popper.min.js -->
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- 外接CSS -->
+    <link rel="stylesheet" href="styles/login.css" type="text/css">
+
+</head>
+<body>
+
+    <header>
+        <nav class="b_clear">
+            <div class="nav_logo l_float">
+                <img src="images/logo.jpg" alt="匿名の提问箱logo">
+            </div>
+            <div class="nav_link r_float">
+                <ul>
+                    <li><a href="index.html">返回首页</a></li>
+                    <li><a href="aboutUs.html">关于我们</a></li>
+                    <li><a href="contactUs.html">联系我们</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="login_body l_clear">
+            <div class="login_form r_float">
+                <div class="login_top">
+                    <img src="images/logo.jpg" alt="匿名の提问箱logo" class="">
+                    <div class="login_tags b_clear">
+                        <span class="top_tag l_float active" id="accountNameButton">用户名登录</span>
+                        <span class="top_tag r_float" id="mailboxButton">邮箱登录</span>
+                    </div>
+                </div>
+                
+                <div class="login_con">
+                    <form action="" method="POST">
+                        <div>
+                            <label for="account_name">用户名</label>
+                            <input type="text" name="account_name" id="account_name" placeholder="请输入用户名" maxlength="15" required oninvalid="setCustomValidity('请输入用户名')" oninput="setCustomValidity('')">
+                            <img src="images/icons/user.svg">
+                        </div>
+                        <div>
+                            <label for="pwd">密码</label>
+                            <input type="password" name="pwd" id="pwd" placeholder="请输入密码" pattern="[0-9a-zA-Z_]+" maxlength="20" required oninvalid="setCustomValidity('请输入密码')" oninput="setCustomValidity('')">
+                            <img src="images/icons/lock.svg">
+                        </div>
+                        <div class="b_clear">
+                            <label for="auth_code" class="b_clear">验证码</label>
+                            <input type="text" name="auth_code" id="auth_code" placeholder="请输入验证码" pattern="[0-9a-zA-Z]+" class="l_float" maxlength="6" required oninvalid="setCustomValidity('请输入验证码')" oninput="setCustomValidity('')">
+                            <img src="images/icons/auth_code.svg">
+                            <img class="codeImg" id="codeImg" onclick="this.src='http\://localhost:8080/1.0/users/getCode?'+Math.random().valueOf()" alt="点击更换" src="http://localhost:8080/1.0/users/getCode"/>
+                        </div>
+                        <div class="b_clear submit">
+                            <button type="submit" id="ac_login">登&nbsp;&nbsp;录</button>
+                            <button type="button" id="registerButton" onclick="window.location.href='register.html'">注&nbsp;&nbsp;册</button>
+                            <a href="updatePassword.html" class="r_float">忘记密码？</a>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="login_con hidden">
+                    <form action="" method="POST">
+                        <div>
+                            <label for="mailbox">邮箱</label>
+                            <input type="email" name="mailbox" id="mailbox" placeholder="请输入邮箱" maxlength="25" required oninvalid="setCustomValidity('请输入邮箱')" oninput="setCustomValidity('')">
+                            <img src="images/icons/mailbox.png">
+                        </div>
+                        <div>
+                            <label for="pwd">密码</label>
+                            <input type="password" name="pwd" id="em_pwd" placeholder="请输入密码" pattern="[0-9a-zA-Z_]+" maxlength="20" required oninvalid="setCustomValidity('请输入密码')" oninput="setCustomValidity('')">
+                            <img src="images/icons/lock.svg">
+                        </div>
+                        <div class="b_clear">
+                            <label for="auth_code" class="b_clear">验证码</label>
+                            <input type="text" name="auth_code" id="em_auth_code" placeholder="请输入验证码" pattern="[0-9a-zA-Z]+" class="l_float" maxlength="6" required oninvalid="setCustomValidity('请输入验证码')" oninput="setCustomValidity('')">
+                            <img src="images/icons/auth_code.svg">
+                            <img class="codeImg" id="codeImg" onclick="this.src='http\://localhost:8080/1.0/users/getCode?'+Math.random().valueOf()" alt="点击更换" src="http://localhost:8080/1.0/users/getCode"/>
+                        </div>
+                        <div class="b_clear submit">
+                            <button type="submit" id="em_login">登&nbsp;&nbsp;录</button>
+                            <button type="button" id="registerButton" onclick="window.location.href='register.html'">注&nbsp;&nbsp;册</button>
+                            <a href="updatePassword.html" class="r_float">忘记密码？</a>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="login_otherAccount">
+                    <span>第三方登录</span>
+                    <a href="undeveloped.html"><img src="images/icons/wechat.svg" alt="微信登录"></a>
+                    <a href="undeveloped.html"><img src="images/icons/weibo.svg" alt="微博登录"></a>
+                    <a href="undeveloped.html"><img src="images/icons/qq.svg" alt="QQ登录"></a>
+                </div>
+            </div>
+
+            <div class="login_ad l_float" id="AdImg">
+                <!-- <a href="">查看详情</a> -->
+            </div>
+
+            <!-- <div id="carousel" class="carousel slide l_float" data-ride="carousel">
+
+                指示符
+                <ul class="carousel-indicators">
+                    <li data-target="#carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel" data-slide-to="1"></li>
+                    <li data-target="#carousel" data-slide-to="2"></li>
+                </ul>
+
+                轮播图片
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://static.runoob.com/images/mix/img_fjords_wide.jpg">
+                    </div>
+                    <div>
+                        <img src="https://static.runoob.com/images/mix/img_nature_wide.jpg">
+                    </div>
+                    <div>
+                        <img src="https://static.runoob.com/images/mix/img_mountains_wide.jpg">
+                    </div>
+                </div>
+
+                左右按钮
+                <a class="carousel-control-prev" href="#carousel" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#carousel" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+            </div> -->
+        </div>
+
+        <div class="footer">
+            <p>Copyright © 2013-2018  <a href="aboutUs.html">李星源-匿名の提问箱</a></p>
+        </div>
+    </div>
+
+    <!-- 外接js -->
+    <!-- 加密相关 -->
+    <script src="http://passport.cnblogs.com/scripts/jsencrypt.min.js"></script>
+    <!-- AES加密 -->
+    <script src="JavaScript/CryptoJS-master/rollups/aes.js"></script>
+    <script src="JavaScript/CryptoJS-master/components/mode-ecb.js"></script>
+    <script src="JavaScript/CryptoJS-master/components/pad-nopadding.js"></script>
+    <script type="text/javascript" src="JavaScript/encrypt.js"></script>
+    <!-- 操作 -->
+    <script src="JavaScript/legal.js"></script>
+    <script src="JavaScript/login.js"></script>
+</body>
+</html>

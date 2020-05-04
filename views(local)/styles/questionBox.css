@@ -1,0 +1,91 @@
+
+/* *{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    font-family: "Microsoft Yahei";
+    background-color: #fff;
+} */
+
+/* html{
+    height: 100%;
+    font-size: 62.5%;
+} */
+
+/* #title{
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    margin-top: 2%;
+    margin-left: 3%;
+} */
+
+#ans_QuestionTable{
+    width: 95%;
+    margin: -1% auto 2% auto;
+}
+
+#tipOffN{
+    width: 95%;
+    margin: -1% auto 2% auto;
+}
+
+table, tr{
+    border: 1px #ddd solid;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+table{
+    width: 100%;
+}
+
+th{
+    color: #222;
+    font-size: 1.6rem;
+    letter-spacing: 0.4rem;
+}
+
+td{
+    color: #666;
+    font-size: 1.4rem;
+    letter-spacing: 0.2rem;
+    background-color: #f3f8fe;
+}
+
+/* .name{
+    width: 18%;
+    height: 4rem;
+}
+
+.operater{
+    width: 20%;
+    height: 4rem;
+}
+
+.begin_time, .ddl{
+    width: 17%;
+    height: 4rem;
+} */
+
+/* .num, .state{
+    width: 13%;
+    height: 4rem;
+}
+
+.fa{
+    margin: 0 2%;
+    background-color: #f3f8fe;
+}
+
+.fa-edit{
+    color: #398af1;
+}
+
+.fa-info-circle{
+    color: #75c5ae;
+}
+
+.fa-trash-o{
+    color: #fc7b5f;
+} */

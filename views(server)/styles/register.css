@@ -1,0 +1,176 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html, body, body div, span, code, img, form{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font-weight: normal;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+html, body { 
+    height: 100%;  
+    color: #333; 
+    font-size: 12px; 
+    font-family: "微软雅黑",MicrosoftYaHei;
+}
+
+a { 
+    text-decoration: none; 
+    color: #3cf; 
+    -webkit-tap-highlight-color: transparent;
+}
+
+input {
+    outline: medium none;
+    font-family: "微软雅黑",MicrosoftYaHei;
+    font-size: 14px;
+}
+
+button{
+    font-family:"微软雅黑",MicrosoftYaHei;
+}
+
+.wrap{
+    max-width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+    background: #ccc;
+}
+
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+.clear{
+    clear:both;
+}
+.red{
+    color: #f60;
+}
+
+.login_wrap{
+	background: url(../images/logo_bg.jpg) no-repeat center;
+	background-size: 100%;
+}
+.logo{
+	width: 500px;
+	height: 150px;
+	margin: 0px auto;
+	background: url(../images/logowz.png) no-repeat center;
+}
+.login_box{
+	width: 360px;
+	background: #FFFFFF;
+	margin: 0px auto;
+}
+.login_title{
+	font-size: 25px;
+	text-align: center;
+	color: #FF7F50;
+	padding: 15px 0;
+	width: 300px;
+	margin: 0 auto;
+	border-bottom: solid 1px #CCCCCC;
+}
+.form_text_ipt{
+	width: 300px;
+	height: 40px;
+	border: solid 1px #CCCCCC;
+	margin: 20px auto 0 auto;
+	background: #FFFFFF;
+}
+
+.form_text_ipt_code{
+	width: 150px;
+	height: 40px;
+	border: solid 1px #CCCCCC;
+	margin: 20px auto 0 auto;
+	background: #FFFFFF;
+	transform:translateX(-50%);
+}
+
+.form_text_ipt input{
+	width: 290px;
+	height: 30px;
+	margin: 5px;
+	border: none;
+	font-family: "微软雅黑";
+	font-size: 15px;
+	color: #666;
+}
+
+.form_text_ipt_code input{
+	width: 120px;
+	height: 30px;
+	margin: 5px;
+	border: none;
+	font-family: "微软雅黑";
+	font-size: 15px;
+	color: #666;
+}
+
+.img_code{
+	transform:translateY(-130%);
+	width: 150px;
+	height: 30px;
+	float: right;
+}
+
+.form_btn{
+	width: 300px;
+	height: 40px;
+	margin:  10px auto;
+}
+.form_btn button{
+	width: 100%;
+	height: 100%;
+	border: none;
+	color: #FFFFFF;
+	font-size: 14px;
+	background: #FF7F50;
+	cursor: pointer;
+}
+.form_reg_btn{
+	transform:translateY(50%);
+	width: 300px;
+	margin: 0 auto;
+	font-size: 14px;
+	color: #666;
+}
+.other_login{
+	overflow: hidden;
+	width: 300px;
+	height: 80px;
+	line-height: 80px;
+	margin: 0px auto;
+}
+.other_left{
+	transform:translateY(5%);
+	font-size: 14px;
+	color: #999;
+}
+
+.login_otherAccount{
+	transform:translateX(43%);
+}
+
+.login_otherAccount>a{
+    margin-right: 2px;
+}
+.login_otherAccount>a>img{
+    height: 24px;
+    vertical-align: middle;
+}
+
+.other_right a:hover{
+	color:#AEEEEE;
+}

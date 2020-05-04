@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>个人中心</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- 新 Bootstrap4 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <!-- bootstrap.bundle.min.js 用于弹窗、提示、下拉菜单，包含了 popper.min.js -->
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- jQuery Validate -->
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+
+    <!-- 外接CSS -->
+    <link rel="stylesheet" href="styles/questionBox.css" type="text/css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2">
+                <nav class="navbar bg-light">
+                    <div class="navbar-nav" id="collapsibleNavbar">
+                        <ul class="navbar-nav nav nav-pills" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#createQuestion" data-toggle="pill">发起提问</a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="QuestionY" class="nav-link" href="#questionY" data-toggle="pill">已回复的提问</a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="QuestionN" class="nav-link" href="#questionN" data-toggle="pill">未回复的提问</a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="QuestionD" class="nav-link" href="#questionD" data-toggle="pill">已删除的提问</a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="BlackQ" class="nav-link" href="#blackQ" data-toggle="pill">已拉黑提问</a>
+                            </li>
+                            <li class="nav-item">
+                                <a id="ansQuestion" class="nav-link" href="#ansQues" data-toggle="pill">有了回复的提问</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <!-- <div class="btn-group">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">发起提问</button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#specifyUser">指定回答用户</a>
+                        <a class="dropdown-item" href="#randomUsers">随机20位用户</a>
+                    </div>
+                </div> -->
+            </div>
+
+            <div class="col-10">
+                <div class="tab-content"  style="margin-top:30px">
+
+                    <div id="myans" class="container tab-pane"><br>
+                        <form name="myans" action="" method="POST" id="myans">
+                            <div class="form-group">
+                                <label for="qContent">回答内容：</label>
+                                <textarea class="form-control" rows="5" id="myansContent" name="myansContent"></textarea>
+                            </div>
+                            <div>
+                                <button type="submit" id="myansButton">提交</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div id="createQuestion" class="container tab-pane active"><br>
+                        <form name="createQuestion" action="" method="POST" id="createQuestion">
+                            <div class="form-group">
+                                <label for="qContent">提问内容：</label>
+                                <textarea class="form-control" rows="5" id="questionContent" name="questionContent"></textarea>
+                            </div>
+                            <div>
+                                <input name="account_name" id="account_name" type="text" placeholder="请输入回答者用户名">
+                            </div>
+                            <div class="radio">
+                                <label><input type="radio" name="optradio">向指定用户提问</label>
+                            </div>
+                            <div class="radio">
+                                <label><input type="radio" name="optradio">向随机20位用户提问</label>
+                            </div>
+                            <div>
+                                <button type="submit" id="createQuestionButton">提交</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div id="blackQ" class="container tab-pane"><br>
+                        <div id="black_QTable">
+                            <table id="blackQTable" name="blackQTable" class="blackQTable">
+                                <thead>
+                                    <tr>
+                                        <th>提问ID</th>
+                                        <th>提问内容</th>
+                                        <th>提问时间</th>
+                                        <th class="operate">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- 列表内容 -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div id="questionY" class="container tab-pane"><br>
+                        <div id="question_YTable">
+                            <table id="questionYTable" name="questionYTable" class="questionYTable">
+                                <thead>
+                                    <tr>
+                                        <th>提问ID</th>
+                                        <th>回答内容</th>
+                                        <th>回答时间</th>
+                                        <th class="operate">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- 列表内容 -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div id="questionN" class="container tab-pane"><br>
+                        <div id="question_NTable">
+                            <table id="questionNTable" name="questionNTable" class="questionNTable">
+                                <thead>
+                                    <tr>
+                                        <th>提问ID</th>
+                                        <th>提问内容</th>
+                                        <th>提问时间</th>
+                                        <th class="operate">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- 列表内容 -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div id="questionD" class="container tab-pane"><br>
+                        <div id="question_DTable">
+                            <table id="questionDTable" name="questionDTable" class="questionDTable">
+                                <thead>
+                                    <tr>
+                                        <th>提问ID</th>
+                                        <th>提问内容</th>
+                                        <th>提问时间</th>
+                                        <th class="operate">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- 列表内容 -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div id="ansQues" class="container tab-pane"><br>
+                        <div id="ans_QuestionTable">
+                            <table id="ansQuestionTable" name="ansQuestionTable" class="ansQuestionTable">
+                                <thead>
+                                    <tr>
+                                        <th>提问ID</th>
+                                        <th>提问内容</th>
+                                        <th>提问时间</th>
+                                        <th class="operate">操作</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- 列表内容 -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div id="ansQuesDetail" class="container tab-pane"><br>
+                        <div id="ans_QuesDetailTable">
+                            <table id="ansQuesDetailTable" name="ansQuesDetailTable" class="ansQuesDetailTable">
+                                <thead>
+                                    <tr>
+                                        <th>回答用户</th>
+                                        <th>回答内容</th>
+                                        <th>回答时间</th>
+                                        <!-- <th class="operate">操作</th> -->
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- 列表内容 -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function readQuestion(obj){
+            alert(obj.parent().parent().find('td').eq(0).text());
+        }
+    </script>
+
+    <!-- 外接js -->
+    <!-- 加密相关 -->
+    <script src="http://passport.cnblogs.com/scripts/jsencrypt.min.js"></script>
+    <!-- AES加密 -->
+    <script src="JavaScript/CryptoJS-master/rollups/aes.js"></script>
+    <script src="JavaScript/CryptoJS-master/components/mode-ecb.js"></script>
+    <script src="JavaScript/CryptoJS-master/components/pad-nopadding.js"></script>
+    <script type="text/javascript" src="JavaScript/encrypt.js"></script>
+    <!-- 操作 -->
+    <script src="JavaScript/legal.js"></script>
+    <script src="JavaScript/questionBox.js"></script>
+</body>
+</html>
